@@ -1,6 +1,6 @@
 # StorageProblem
 
-Make container management a minigame.
+Make container management a minigame, so you need to manage spaces for items besides just weight.
 
 Every container has a **S** value which can be calculated by (**(`WeightCapacity of the container`** - **`BaseWeightCapacity`)** x **`Container Slot Limit Ratio`**).
 
