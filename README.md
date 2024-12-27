@@ -2,10 +2,11 @@
 
 Make container management a minigame.
 
-The heavier a container can hold, the less slots it has.
+Every container has a **S** value which can be calculated by (**(`WeightCapacity of the container`** - **`BaseWeightCapacity`)** x **`Container Slot Limit Ratio`**).
 
-If **No Problem Mode** is enabled, the slot limit simply reflects the weight capacity of the container (**WeightCapacity of the container** x **ContainerSlotLimitRatio** ).
+Say, a 20kg container gets a **S** of `(20 - 10) * 0.2` = 2, and a 40kg container gets a **S** of `(40 - 10) * 0.2` = 6.
 
-Otherwise, the slot limit is calculated by **MaxSlots** - (**(WeightCapacity of the container** - **BaseWeightCapacity)** x **Container Slot Limit Ratio**).
+By default, a container can hold up to **`MaxSlots`** - **`S`**. So a 20kg container gets `12 - 2` = 10 slots, while a 40kg container gets `12 - 6` = 6 slots.
 
-For example a 20kg container gets `12 - (20 - 10) * 0.2` = 10 slots, while a 40kg container gets `12 - (40 - 10) * 0.2` = 6 slots. slots.
+If **No Problem Mode** is enabled, **`S`** is simply used as the slot limit, so the heavier a container supports the more slots it has.
+
